@@ -8,24 +8,26 @@ import com.example.rxkotlin.dao.MaskDB
 import com.example.rxkotlin.databinding.ActivityAddMaskBinding
 import kotlinx.android.synthetic.main.activity_add_mask.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 class AddMaskActivity : AppCompatActivity() {
 
     private var maskDb: MaskDB? = null
+    private lateinit var binding: ActivityAddMaskBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityAddMaskBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_add_mask)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_mask)
 
         maskDb = MaskDB.getInstance(this)
 
         val addRunnable = Runnable {
             val newMask = Mask()
             newMask.maskName = edit_name.text.toString()
-            newMask.maskPrice = edit_price.textAlignment.toString().toInt()
+            newMask.maskPrice = edit_price.text.toString()
             newMask.maskDescription = edit_description.text.toString()
+            newMask.maskImg = img_select.adjustViewBounds.toString()
+
             maskDb?.maskDao()?.insert(newMask)
         }
 
@@ -35,6 +37,9 @@ class AddMaskActivity : AppCompatActivity() {
 
             startActivity<MainActivity>()
             finish()
+        }
+        binding.imgSelect.setOnClickListener {
+            toast("Click")
         }
     }
 

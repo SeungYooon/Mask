@@ -8,12 +8,12 @@ import androidx.room.Query
 @Dao
 interface MaskDao {
 
-    @Query("SELECT * FROM mask_table ORDER BY maskname ASC")
+    @Query("SELECT * FROM corona_mask")
     fun getAll(): List<Mask>
 
     @Insert(onConflict = REPLACE)
     fun insert(mask: Mask)
 
-    @Query("DELETE from mask_table")
+    @Query("DELETE from corona_mask")
     fun deleteAll()
 }

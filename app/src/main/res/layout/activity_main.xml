@@ -28,7 +28,7 @@
             android:backgroundTint="@color/design_default_color_primary"
             android:elevation="6dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_add_black_24dp"
+            android:src="@drawable/add_plus"
             app:fabSize="normal" />
 
     </RelativeLayout>

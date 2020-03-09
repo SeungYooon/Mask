@@ -20,7 +20,7 @@ abstract class MaskDB : RoomDatabase() {
                 synchronized(MaskDB::class) {
                     INSTANCE = Room.databaseBuilder(
                             context.applicationContext,
-                            MaskDB::class.java, "Mask.db"
+                            MaskDB::class.java, "MaskDDd"
                         )
                         .fallbackToDestructiveMigration()
                         .build()

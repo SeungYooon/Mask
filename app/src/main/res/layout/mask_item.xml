@@ -1,66 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <data>-->
+    <data>
 
-<!--        <variable-->
-<!--            name="mask"-->
-<!--            type="com.example.rxkotlin.dao.Mask" />-->
-<!--    </data>-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    android:background="@android:color/white"
-    android:elevation="6dp"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:padding="8dp">
+        <variable
+            name="maskitem"
+            type="com.example.rxkotlin.dao.Mask" />
+    </data>
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        android:elevation="6dp"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-        <TextView
-            android:id="@+id/mask_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="@{mask.maskName}"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/mask_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="@{mask.maskDescription}"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="13sp" />
+            <TextView
+                android:id="@+id/mask_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{maskitem.maskName}"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mask_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{maskitem.maskDescription}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp" />
 
 
-        <TextView
-            android:id="@+id/mask_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="@{mask.maskPrice}"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="13sp" />
+            <TextView
+                android:id="@+id/mask_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{maskitem.maskPrice}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_mask"
+            setImage="@{maskitem.maskImg}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
 
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/ic_launcher" />
-
-
-</LinearLayout>
-
+</layout>
