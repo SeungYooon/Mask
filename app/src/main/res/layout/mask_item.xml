@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
+    <!--    <data>-->
 
-        <variable
-            name="maskitem"
-            type="com.example.rxkotlin.dao.Mask" />
-    </data>
+    <!--        <variable-->
+    <!--            name="maskitem"-->
+    <!--            type="com.example.rxkotlin.dao.Mask" />-->
+    <!--    </data>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="@{maskitem.maskName}"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -41,7 +40,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="@{maskitem.maskDescription}"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="13sp" />
 
@@ -51,7 +49,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="@{maskitem.maskPrice}"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="13sp" />
 
@@ -60,7 +57,6 @@
 
         <ImageView
             android:id="@+id/img_mask"
-            setImage="@{maskitem.maskImg}"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:adjustViewBounds="true"

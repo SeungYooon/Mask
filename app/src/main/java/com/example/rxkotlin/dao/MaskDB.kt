@@ -4,9 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import kotlinx.coroutines.CoroutineScope
 
 
-@Database(entities = [Mask::class], version = 1)
+@Database(entities = arrayOf(Mask::class), version = 2)
 abstract class MaskDB : RoomDatabase() {
 
     abstract fun maskDao(): MaskDao
@@ -15,22 +16,38 @@ abstract class MaskDB : RoomDatabase() {
         @Volatile
         private var INSTANCE: MaskDB? = null
 
-        fun getInstance(context: Context): MaskDB? {
-            if (INSTANCE == null) {
-                synchronized(MaskDB::class) {
-                    INSTANCE = Room.databaseBuilder(
-                            context.applicationContext,
-                            MaskDB::class.java, "MaskDDd"
-                        )
-                        .fallbackToDestructiveMigration()
-                        .build()
-                }
-            }
-            return INSTANCE
-        }
+        fun getDatabase(context: Context, scope: CoroutineScope): MaskDB {
+            return INSTANCE ?: synchronized(this) {
 
-        fun destroyInstance() {
-            INSTANCE = null
+                val instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        MaskDB::class.java,
+                        "mask_db"
+                    ).fallbackToDestructiveMigration()
+                    .build()
+                INSTANCE = instance
+                return instance
+            }
         }
     }
 }
+
+//        fun getInstance(context: Context): MaskDB? {
+//            if (INSTANCE == null) {
+//                synchronized(MaskDB::class) {
+//                    INSTANCE = Room.databaseBuilder(
+//                            context.applicationContext,
+//                            MaskDB::class.java, "MaskDDd"
+//                        )
+//                        .fallbackToDestructiveMigration()
+//                        .build()
+//                }
+//            }
+//            return INSTANCE
+//        }
+//
+//        fun destroyInstance() {
+//            INSTANCE = null
+//        }
+//    }
+//}
