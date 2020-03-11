@@ -24,7 +24,7 @@ import org.jetbrains.anko.toast
 import java.util.jar.Manifest
 
 class AddMaskActivity : AppCompatActivity() {
-k
+
     lateinit var binding: ActivityAddMaskBinding
     private val Gallery = 1
 
@@ -47,11 +47,10 @@ k
                 finish()
             }
         })
-        binding.imgBtn.setOnClickListener { openGalleryForImage() }
+        binding.imgBtn.setOnClickListener { Gallery() }
     }
-
     // 이미지 선택
-    private fun openGalleryForImage() {
+    private fun Gallery() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.setType("image/*")
 
