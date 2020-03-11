@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
     lateinit var oldMask: String
     lateinit var oldMaskPrice: String
     lateinit var oldMaskDescription: String
+    lateinit var oldMaskImg: String
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,6 @@ class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
 
                     negativeButton("No") { toast("No") }
                 }.show()
-                //maskViewModel.deleteMasks()
             }
         })
         // 새로운 데이터 추가
@@ -60,6 +60,9 @@ class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
         val adapter = MaskAdapter(this, this)
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.addItemDecoration(
+            DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        )
         return adapter
     }
 
@@ -70,10 +73,16 @@ class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
         startActivity(intent)
     }
 
-    override fun getOldMask(maskName: String, maskPrice: String, maskDescription: String) {
+    override fun getOldMask(
+        maskName: String,
+        maskPrice: String,
+        maskDescription: String,
+        maskImg: String
+    ) {
         oldMask = maskName
         oldMaskPrice = maskPrice
         oldMaskDescription = maskDescription
+        oldMaskImg = maskImg
     }
 }
 

@@ -3,6 +3,8 @@
     package="com.example.rxkotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".UpdateActivity"></activity>
-        <activity android:name=".UpdateMaskActivity" />
+
+        <activity android:name=".UpdateActivity" />
         <activity android:name=".AddMaskActivity" />
-        <activity android:name=".DetailActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

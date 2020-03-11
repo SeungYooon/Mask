@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import kotlinx.coroutines.CoroutineScope
 
 
-@Database(entities = arrayOf(Mask::class), version = 2)
+@Database(entities = arrayOf(Mask::class), version = 1)
 abstract class MaskDB : RoomDatabase() {
 
     abstract fun maskDao(): MaskDao

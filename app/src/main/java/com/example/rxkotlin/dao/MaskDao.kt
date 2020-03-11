@@ -21,11 +21,12 @@ interface MaskDao {
     @Query("DELETE FROM corona_mask WHERE maskName=:maskName")
     fun deleteByMaskName(maskName: String)
 
-    @Query("UPDATE corona_mask SET maskName=:newMask, maskPrcie=:newMaskPrice, maskDescription=:newMaskDescrption WHERE maskName=:oldMask")
+    @Query("UPDATE corona_mask SET maskName=:newMask, maskPrcie=:newMaskPrice, maskDescription=:newMaskDescrption, maskImg=:newMaskImg WHERE maskName=:oldMask")
     fun updateMask(
         oldMask: String,
         newMask: String,
         newMaskPrice: String,
-        newMaskDescrption: String
+        newMaskDescrption: String,
+        newMaskImg : String
     )
 }

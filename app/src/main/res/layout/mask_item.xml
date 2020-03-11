@@ -2,67 +2,68 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--    <data>-->
+    <data>
+        <variable
+            name="maskitem"
+            type="com.example.rxkotlin.dao.Mask" />
+    </data>
 
-    <!--        <variable-->
-    <!--            name="maskitem"-->
-    <!--            type="com.example.rxkotlin.dao.Mask" />-->
-    <!--    </data>-->
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/con_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/white"
+        android:background="?android:attr/selectableItemBackground"
         android:elevation="6dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/mask_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:textColor="@android:color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/mask_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="13sp" />
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp">
 
 
-            <TextView
-                android:id="@+id/mask_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="13sp" />
+        <TextView
+            android:id="@+id/mask_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{maskitem.maskName}"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_mask" />
+
+        <TextView
+            android:id="@+id/mask_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{maskitem.maskDescription}"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_name" />
 
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/mask_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{maskitem.maskPrcie}"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_description" />
+
 
         <ImageView
             android:id="@+id/img_mask"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/mask"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setImage="@{maskitem.maskImg}" />
 
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

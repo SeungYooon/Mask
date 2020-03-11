@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -13,10 +13,15 @@
             android:id="@+id/edit_maskname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="350dp"
             android:fontFamily="sans-serif-light"
             android:hint="mask name"
             android:inputType="textAutoComplete"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edit_maskprice"
@@ -25,7 +30,10 @@
             android:fontFamily="sans-serif-light"
             android:hint="mask price"
             android:inputType="textAutoComplete"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_maskname" />
 
 
         <EditText
@@ -35,15 +43,42 @@
             android:fontFamily="sans-serif-light"
             android:hint="mask description"
             android:inputType="textAutoComplete"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_maskprice" />
+
+        <Button
+            android:id="@+id/img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="choose"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_maskdescription" />
+
+        <ImageView
+            android:id="@+id/edit_img"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_btn" />
 
         <Button
             android:id="@+id/button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:text="Add" />
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
