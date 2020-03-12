@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import kotlinx.coroutines.CoroutineScope
 
-
-@Database(entities = arrayOf(Mask::class), version = 1)
+// shema가 바꼈을때 version 업데이트 해줘야하나봄
+@Database(entities = arrayOf(Mask::class), version = 2)
 abstract class MaskDB : RoomDatabase() {
 
     abstract fun maskDao(): MaskDao

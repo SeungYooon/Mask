@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="maskitem"
             type="com.example.rxkotlin.dao.Mask" />
@@ -52,10 +53,30 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mask_description" />
 
+        <TextView
+            android:id="@+id/mask_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{maskitem.maskDate}"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_price" />
+
+
+        <TextView
+            android:id="@+id/mask_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{maskitem.maskStart}"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_date" />
 
         <ImageView
             android:id="@+id/img_mask"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"

@@ -2,6 +2,7 @@ package com.example.rxkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.graphics.drawable.toBitmap
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -24,10 +25,12 @@ class UpdateActivity : AppCompatActivity() {
             binding.buttonUpdate.setOnClickListener {
                 maskViewModel.updateMask(
                     oldMask,
-                    binding.editNewmask.text.toString(),
-                    binding.editNewprice.text.toString(),
-                    binding.editNewdescription.text.toString(),
-                    binding.editImg.drawable.toString()
+                    binding.editMaskname.text.toString(),
+                    binding.editMaskdescription.text.toString(),
+                    binding.editMaskprice.text.toString(),
+                    binding.editImg.adjustViewBounds.toString(),
+                    binding.editDate.text.toString(),
+                    binding.editMaskstart.text.toString()
                 )
                 finish()
             }

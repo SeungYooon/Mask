@@ -1,23 +1,21 @@
 package com.example.rxkotlin
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.rxkotlin.dao.Mask
-import com.example.rxkotlin.dao.MaskDB
 import com.example.rxkotlin.dao.MaskViewModel
 import com.example.rxkotlin.databinding.ActivityMainBinding
 import com.example.rxkotlin.util.MaskAdapter
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
@@ -26,6 +24,8 @@ class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
     lateinit var oldMaskPrice: String
     lateinit var oldMaskDescription: String
     lateinit var oldMaskImg: String
+    lateinit var oldMaskDate: String
+    lateinit var oldMaskStart: String
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,12 +77,16 @@ class MainActivity : AppCompatActivity(), MaskAdapter.UpdateMaskListener {
         maskName: String,
         maskPrice: String,
         maskDescription: String,
-        maskImg: String
+        maskImg: String,
+        maskDate: String,
+        maskStart: String
     ) {
         oldMask = maskName
         oldMaskPrice = maskPrice
         oldMaskDescription = maskDescription
         oldMaskImg = maskImg
+        oldMaskDate = maskDate
+        oldMaskStart = maskStart
     }
 }
 

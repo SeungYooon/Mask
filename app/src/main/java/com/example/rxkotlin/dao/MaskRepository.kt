@@ -18,9 +18,19 @@ class MaskRepository(private val maskDao: MaskDao) {
         newMask: String,
         newMaskPrice: String,
         newMaskDescription: String,
-        newMaskImg: String
+        newMaskImg: String,
+        newMaskDate: String,
+        newMaskStart: String
     ) {
-        maskDao.updateMask(oldMask, newMask, newMaskPrice, newMaskDescription, newMaskImg)
+        maskDao.updateMask(
+            oldMask,
+            newMask,
+            newMaskPrice,
+            newMaskDescription,
+            newMaskImg,
+            newMaskDate,
+            newMaskStart
+        )
     }
 
 }

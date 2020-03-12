@@ -1,6 +1,7 @@
 package com.example.rxkotlin.dao
 
 import android.app.Application
+import android.graphics.drawable.Drawable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -31,8 +32,18 @@ class MaskViewModel(application: Application) : AndroidViewModel(application) {
         newMask: String,
         newMaskDescription: String,
         newMaskPrice: String,
-        newMaskimg: String
+        newMaskimg: String,
+        newMaskDate: String,
+        newMaskStart: String
     ) = viewModelScope.launch(Dispatchers.IO) {
-        repository.updateMask(oldMask, newMask, newMaskPrice, newMaskDescription, newMaskimg)
+        repository.updateMask(
+            oldMask,
+            newMask,
+            newMaskPrice,
+            newMaskDescription,
+            newMaskimg,
+            newMaskDate,
+            newMaskStart
+        )
     }
 }

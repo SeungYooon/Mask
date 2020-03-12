@@ -1,21 +1,16 @@
 package com.example.rxkotlin.util
 
-import android.content.ClipDescription
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ListAdapter
-import android.widget.TextView
+import androidx.core.graphics.drawable.toBitmap
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.rxkotlin.MainActivity
 import com.example.rxkotlin.R
 import com.example.rxkotlin.dao.Mask
 import com.example.rxkotlin.databinding.MaskItemBinding
-import org.jetbrains.anko.AnkoAsyncContext
 
 class MaskAdapter internal constructor(
     private var context: Context,
@@ -33,7 +28,9 @@ class MaskAdapter internal constructor(
                     binding.maskName.text.toString(),
                     binding.maskPrice.text.toString(),
                     binding.maskDescription.text.toString(),
-                    binding.imgMask.adjustViewBounds.toString()
+                    binding.imgMask.adjustViewBounds.toString(),
+                    binding.maskDate.text.toString(),
+                    binding.maskStart.text.toString()
                 )
                 updateMaskListener.updateMask(adapterPosition)
             }
@@ -45,7 +42,6 @@ class MaskAdapter internal constructor(
 
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MaskAdapter.ViewHolder {
@@ -63,7 +59,7 @@ class MaskAdapter internal constructor(
 
     override fun onBindViewHolder(holder: MaskAdapter.ViewHolder, position: Int) {
         val current = masks[position]
-//
+
         holder.apply {
             bind(current)
             itemView.tag = current
@@ -80,9 +76,10 @@ class MaskAdapter internal constructor(
             maskName: String,
             maskPrice: String,
             maskDescription: String,
-            maskImg: String
+            maskImg: String,
+            maskDate: String,
+            maskStart: String
         )
-
         fun updateMask(position: Int)
     }
 }

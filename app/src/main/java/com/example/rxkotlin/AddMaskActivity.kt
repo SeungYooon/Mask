@@ -1,16 +1,11 @@
 package com.example.rxkotlin
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -18,10 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.rxkotlin.dao.Mask
 import com.example.rxkotlin.dao.MaskViewModel
 import com.example.rxkotlin.databinding.ActivityAddMaskBinding
-import kotlinx.android.synthetic.main.activity_add_mask.*
-import org.jetbrains.anko.alert
 import org.jetbrains.anko.toast
-import java.util.jar.Manifest
 
 class AddMaskActivity : AppCompatActivity() {
 
@@ -41,7 +33,9 @@ class AddMaskActivity : AppCompatActivity() {
                         (binding.editMaskname.text.toString()),
                         binding.editMaskprice.text.toString(),
                         binding.editMaskdescription.text.toString(),
-                        binding.editImg.drawable.toString()
+                        binding.editImg.adjustViewBounds.toString(),
+                        binding.editDate.text.toString(),
+                        binding.editMaskstart.text.toString()
                     )
                 )
                 finish()
@@ -49,6 +43,7 @@ class AddMaskActivity : AppCompatActivity() {
         })
         binding.imgBtn.setOnClickListener { Gallery() }
     }
+
     // 이미지 선택
     private fun Gallery() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)

@@ -29,7 +29,8 @@
             android:elevation="6dp"
             android:scaleType="centerCrop"
             android:src="@drawable/add_plus"
-            app:fabSize="normal" />
+            app:fabSize="normal"
+            tools:ignore="RelativeOverlap" />
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

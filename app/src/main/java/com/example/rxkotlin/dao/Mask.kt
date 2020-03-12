@@ -1,5 +1,6 @@
 package com.example.rxkotlin.dao
 
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.room.ColumnInfo
@@ -12,7 +13,9 @@ data class Mask(
     @PrimaryKey @ColumnInfo(name = "maskname") val maskName: String,
     val maskPrcie: String,
     val maskDescription: String,
-    val maskImg: String
+    val maskImg: String,
+    val maskDate: String,
+    val maskStart: String
 )
 
 object MyBind {
