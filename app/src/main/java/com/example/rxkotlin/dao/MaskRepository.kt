@@ -1,6 +1,7 @@
 package com.example.rxkotlin.dao
 
 import androidx.lifecycle.LiveData
+import com.example.rxkotlin.model.Mask
 
 class MaskRepository(private val maskDao: MaskDao) {
     val allMasks: LiveData<MutableList<Mask>> = maskDao.getAll()

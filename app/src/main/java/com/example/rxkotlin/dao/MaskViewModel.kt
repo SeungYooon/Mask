@@ -1,10 +1,10 @@
 package com.example.rxkotlin.dao
 
 import android.app.Application
-import android.graphics.drawable.Drawable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.rxkotlin.model.Mask
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

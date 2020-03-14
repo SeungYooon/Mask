@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="maskitem"
-            type="com.example.rxkotlin.dao.Mask" />
+            type="com.example.rxkotlin.model.Mask" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,77 +15,90 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
-        android:elevation="6dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="15dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="15dp">
-
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp">
 
         <TextView
             android:id="@+id/mask_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:text="@{maskitem.maskName}"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_mask" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mask_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="mask name" />
 
         <TextView
             android:id="@+id/mask_description"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:paddingVertical="12dp"
             android:text="@{maskitem.maskDescription}"
             android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mask_name" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mask_img"
+            app:layout_constraintTop_toBottomOf="@id/mask_name"
+            tools:text="mask description" />
 
 
         <TextView
             android:id="@+id/mask_price"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:paddingVertical="12dp"
             android:text="@{maskitem.maskPrcie}"
-            android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mask_description" />
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mask_img"
+            app:layout_constraintTop_toBottomOf="@id/mask_description"
+            tools:text="mask price" />
 
         <TextView
             android:id="@+id/mask_date"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_star"
             android:text="@{maskitem.maskDate}"
-            android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mask_price" />
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mask_img"
+            app:layout_constraintTop_toBottomOf="@id/mask_price"
+            tools:text="mask date" />
 
 
         <TextView
             android:id="@+id/mask_start"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="30dp"
             android:text="@{maskitem.maskStart}"
-            android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mask_date" />
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mask_img"
+            app:layout_constraintTop_toBottomOf="@id/mask_date"
+            tools:text="mask start" />
 
         <ImageView
-            android:id="@+id/img_mask"
-            android:layout_width="match_parent"
+            android:id="@+id/mask_img"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/mask"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:setImage="@{maskitem.maskImg}" />
+            app:setImage="@{maskitem.maskImg}"
+            tools:ignore="ContentDescription" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

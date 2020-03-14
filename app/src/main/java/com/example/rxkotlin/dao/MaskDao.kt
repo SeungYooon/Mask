@@ -2,6 +2,7 @@ package com.example.rxkotlin.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.rxkotlin.model.Mask
 
 @Dao
 interface MaskDao {
@@ -30,4 +31,5 @@ interface MaskDao {
         newMaskDate: String,
         newMaskStart: String
     )
+
 }

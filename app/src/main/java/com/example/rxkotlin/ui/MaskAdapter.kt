@@ -1,15 +1,12 @@
-package com.example.rxkotlin.util
+package com.example.rxkotlin.ui
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toBitmap
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rxkotlin.R
-import com.example.rxkotlin.dao.Mask
+import com.example.rxkotlin.model.Mask
 import com.example.rxkotlin.databinding.MaskItemBinding
 
 class MaskAdapter internal constructor(
@@ -18,7 +15,7 @@ class MaskAdapter internal constructor(
 ) :
     RecyclerView.Adapter<MaskAdapter.ViewHolder>() {
 
-    private var masks: MutableList<Mask> = ArrayList<Mask>()
+    private var masks: MutableList<Mask> = ArrayList()
 
     inner class ViewHolder(private val binding: MaskItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -28,7 +25,7 @@ class MaskAdapter internal constructor(
                     binding.maskName.text.toString(),
                     binding.maskPrice.text.toString(),
                     binding.maskDescription.text.toString(),
-                    binding.imgMask.adjustViewBounds.toString(),
+                    binding.maskImg.toString(),
                     binding.maskDate.text.toString(),
                     binding.maskStart.text.toString()
                 )
@@ -39,7 +36,6 @@ class MaskAdapter internal constructor(
         fun bind(mask: Mask) {
             binding.apply {
                 maskitem = mask
-
             }
         }
     }

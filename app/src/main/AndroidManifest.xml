@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".UpdateActivity" />
-        <activity android:name=".AddMaskActivity" />
+        <activity android:name=".ui.UpdateActivity" />
+        <activity android:name=".ui.AddMaskActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

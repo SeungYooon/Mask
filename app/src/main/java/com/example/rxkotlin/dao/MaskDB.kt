@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.rxkotlin.model.Mask
 import kotlinx.coroutines.CoroutineScope
 
 // shema가 바꼈을때 version 업데이트 해줘야하나봄
-@Database(entities = arrayOf(Mask::class), version = 2)
+@Database(entities = [Mask::class], version = 2, exportSchema = false)
 abstract class MaskDB : RoomDatabase() {
 
     abstract fun maskDao(): MaskDao
@@ -31,23 +32,3 @@ abstract class MaskDB : RoomDatabase() {
         }
     }
 }
-
-//        fun getInstance(context: Context): MaskDB? {
-//            if (INSTANCE == null) {
-//                synchronized(MaskDB::class) {
-//                    INSTANCE = Room.databaseBuilder(
-//                            context.applicationContext,
-//                            MaskDB::class.java, "MaskDDd"
-//                        )
-//                        .fallbackToDestructiveMigration()
-//                        .build()
-//                }
-//            }
-//            return INSTANCE
-//        }
-//
-//        fun destroyInstance() {
-//            INSTANCE = null
-//        }
-//    }
-//}

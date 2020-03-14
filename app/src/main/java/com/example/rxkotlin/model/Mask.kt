@@ -1,5 +1,6 @@
-package com.example.rxkotlin.dao
+package com.example.rxkotlin.model
 
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -7,6 +8,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bumptech.glide.Glide
+import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "corona_mask")
 data class Mask(
