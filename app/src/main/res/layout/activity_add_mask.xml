@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -13,7 +14,7 @@
             android:id="@+id/edit_maskname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="450dp"
+            android:layout_marginBottom="650dp"
             android:fontFamily="sans-serif-light"
             android:hint="mask name"
             android:inputType="textAutoComplete"
@@ -81,20 +82,22 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:text="choose"
+            app:layout_constraintBottom_toTopOf="@id/edit_img"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/edit_img"
             app:layout_constraintTop_toBottomOf="@id/edit_maskstart" />
 
         <ImageView
             android:id="@+id/edit_img"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mask"
+            app:layout_constraintBottom_toTopOf="@id/button_add"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button_add"
             app:layout_constraintTop_toBottomOf="@id/img_btn" />
 
         <Button
