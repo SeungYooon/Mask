@@ -1,17 +1,12 @@
-package com.example.rxkotlin.model
-
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
+package com.example.corona.model
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bumptech.glide.Glide
-import com.google.gson.annotations.SerializedName
-
 @Entity(tableName = "corona_mask")
-data class Mask(
+data class MaskData(
     @PrimaryKey @ColumnInfo(name = "maskname") val maskName: String,
     val maskPrcie: String,
     val maskDescription: String,
@@ -23,7 +18,7 @@ data class Mask(
 object MyBind {
     @JvmStatic
     @BindingAdapter("setImage")
-    fun setImageUrl(view: ImageView, maskImg: String) {
+    fun setImage(view: ImageView, maskImg: String) {
         Glide.with(view.context).load(maskImg).override(1024).into(view)
     }
 }

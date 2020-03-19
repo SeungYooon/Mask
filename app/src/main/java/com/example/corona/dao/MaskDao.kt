@@ -1,19 +1,18 @@
-package com.example.rxkotlin.dao
+package com.example.corona.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.rxkotlin.model.Mask
+import com.example.corona.model.MaskData
 
 @Dao
 interface MaskDao {
 
     @Query("SELECT * FROM corona_mask")
-    //fun getAll(): List<Mask>
-    fun getAll(): LiveData<MutableList<Mask>>
+    fun getAll(): LiveData<MutableList<MaskData>>
 
     // 중복될 경우 덮어쓴다.
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(mask: Mask)
+    fun insert(mask: MaskData)
 
     @Query("DELETE FROM corona_mask")
     fun deleteAll()

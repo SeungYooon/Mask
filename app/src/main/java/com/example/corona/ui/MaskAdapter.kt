@@ -1,13 +1,13 @@
-package com.example.rxkotlin.ui
+package com.example.corona.ui
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rxkotlin.R
-import com.example.rxkotlin.model.Mask
-import com.example.rxkotlin.databinding.MaskItemBinding
+import com.example.corona.R
+import com.example.corona.databinding.MaskItemBinding
+import com.example.corona.model.MaskData
 
 class MaskAdapter internal constructor(
     private var context: Context,
@@ -15,7 +15,7 @@ class MaskAdapter internal constructor(
 ) :
     RecyclerView.Adapter<MaskAdapter.ViewHolder>() {
 
-    private var masks: MutableList<Mask> = ArrayList()
+    private var masks: MutableList<MaskData> = ArrayList()
 
     inner class ViewHolder(private val binding: MaskItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -33,7 +33,7 @@ class MaskAdapter internal constructor(
             }
         }
 
-        fun bind(mask: Mask) {
+        fun bind(mask: MaskData) {
             binding.apply {
                 maskitem = mask
             }
@@ -62,7 +62,7 @@ class MaskAdapter internal constructor(
         }
     }
 
-    internal fun setMasks(masks: MutableList<Mask>) {
+    internal fun setMasks(masks: MutableList<MaskData>) {
         this.masks = masks
         notifyDataSetChanged()
     }
@@ -76,6 +76,7 @@ class MaskAdapter internal constructor(
             maskDate: String,
             maskStart: String
         )
+
         fun updateMask(position: Int)
     }
 }

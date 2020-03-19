@@ -1,14 +1,14 @@
-package com.example.rxkotlin.dao
+package com.example.corona.dao
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.rxkotlin.model.Mask
+import com.example.corona.model.MaskData
 import kotlinx.coroutines.CoroutineScope
 
 // shema가 바꼈을때 version 업데이트 해줘야하나봄
-@Database(entities = [Mask::class], version = 2, exportSchema = false)
+@Database(entities = [MaskData::class], version = 1)
 abstract class MaskDB : RoomDatabase() {
 
     abstract fun maskDao(): MaskDao

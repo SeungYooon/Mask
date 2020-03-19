@@ -7,7 +7,7 @@
 
         <variable
             name="maskitem"
-            type="com.example.rxkotlin.model.Mask" />
+            type="com.example.corona.model.MaskData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

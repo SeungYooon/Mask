@@ -40,4 +40,7 @@
     <!-- 타이머 -->
     <string name="pause_timer">Pause Timer</string>
     <string name="resume_timer">Resume Timer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -77,11 +77,20 @@
             android:id="@+id/img_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="choose"
+            android:text="gallery"
             app:layout_constraintBottom_toTopOf="@id/edit_img"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/camera_btn"
+            app:layout_constraintTop_toBottomOf="@id/edit_maskstart" />
+
+        <Button
+            android:id="@+id/camera_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="camera"
+            app:layout_constraintBottom_toTopOf="@id/edit_img"
+            app:layout_constraintLeft_toRightOf="@id/img_btn"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_maskstart" />
 
@@ -89,15 +98,15 @@
             android:id="@+id/edit_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_margin="20dp"
             android:adjustViewBounds="true"
             android:contentDescription="이미지를 열수 없습니다."
+            android:padding="20dp"
             android:scaleType="centerCrop"
             android:src="@drawable/mask"
             app:layout_constraintBottom_toTopOf="@id/button_update"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_btn" />
+            app:layout_constraintRight_toRightOf="parent" />
 
         <Button
             android:id="@+id/button_update"

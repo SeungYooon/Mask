@@ -1,12 +1,12 @@
-package com.example.rxkotlin.dao
+package com.example.corona.dao
 
 import androidx.lifecycle.LiveData
-import com.example.rxkotlin.model.Mask
+import com.example.corona.model.MaskData
 
 class MaskRepository(private val maskDao: MaskDao) {
-    val allMasks: LiveData<MutableList<Mask>> = maskDao.getAll()
+    val allMasks: LiveData<MutableList<MaskData>> = maskDao.getAll()
 
-    suspend fun insert(mask: Mask) {
+    suspend fun insert(mask: MaskData) {
         maskDao.insert(mask)
     }
 
@@ -33,5 +33,4 @@ class MaskRepository(private val maskDao: MaskDao) {
             newMaskStart
         )
     }
-
 }

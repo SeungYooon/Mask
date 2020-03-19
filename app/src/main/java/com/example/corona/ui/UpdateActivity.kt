@@ -1,4 +1,4 @@
-package com.example.rxkotlin.ui
+package com.example.corona.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -10,16 +10,16 @@ import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.rxkotlin.R
-import com.example.rxkotlin.dao.MaskViewModel
-import com.example.rxkotlin.databinding.ActivityUpdateBinding
-import kotlinx.android.synthetic.main.activity_update.*
+import com.example.corona.R
+import com.example.corona.dao.MaskViewModel
+import com.example.corona.databinding.ActivityUpdateBinding
 import org.jetbrains.anko.toast
 
 class UpdateActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUpdateBinding
     private val Picture = 2
+    private val Camera = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +47,11 @@ class UpdateActivity : AppCompatActivity() {
             }
         })
         binding.imgBtn.setOnClickListener { Picture() }
+        binding.cameraBtn.setOnClickListener { takeCamera() }
+    }
+
+    private fun takeCamera() {
+        TODO("Not yet implemented")
     }
 
     // 이미지 선택

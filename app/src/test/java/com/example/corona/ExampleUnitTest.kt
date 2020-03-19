@@ -1,4 +1,4 @@
-package com.example.rxkotlin
+package com.example.corona
 
 import org.junit.Test
 
